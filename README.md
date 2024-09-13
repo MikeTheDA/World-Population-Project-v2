@@ -91,22 +91,13 @@ ORDER BY
 LIMIT 10;
 ```
 
-| Name              | Population   |
-|-------------------|--------------|
-| India             | 1,428,627,663|
-| China             | 1,410,710,000|
-| United States     | 334,914,895  |
-| Indonesia         | 277,534,122  |
-| Pakistan          | 240,485,658  |
-| Nigeria           | 223,804,632  |
-| Brazil            | 216,422,446  |
-| Bangladesh        | 172,954,319  |
-| Russian Federation| 143,826,130  |
-| Mexico            | 128,455,567  |
-
 ![top10_2023](assets/top102023.png)
 
-*Bar chart to show the staggering difference between India's population and the United States'*
+*Bar chart shows the staggering difference between India's population and the United States'*
+
+![map](assets/map_top10_populous_2023.png)
+
+
 
 ### 3. Countries with the Highest Population in 1960 AND 2023
 
@@ -245,7 +236,7 @@ LIMIT 10;
 | Oman                             | 766              |
 | Andorra                          | 748              |
 
-![top10](assets/top_10_map.png)
+![top10](assets/map_top10.png)
 *Map showing that 8 out of the 10 countries w/ the highest population growth are in the Middle East (Asia)*
 
 ### 6. Countries with a Decline in Population Between 1960 and 2023
