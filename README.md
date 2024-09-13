@@ -1,5 +1,5 @@
 # Introduction
-**🌎 This project examines the total population of 217 countries & territories around the world from 1960 to 2023 🌎**
+**This project examines the total population of 217 countries & territories around the world from 1960 to 2023 🌎**
 
 Shortcut to all the SQL queries used:
 [project folder](/project/)
