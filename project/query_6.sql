@@ -3,11 +3,7 @@
 WITH pop_growth AS (
 SELECT 
     c.name,
-    CASE
-        WHEN p1960.population <> '0'
-        THEN ((CAST(p2023.population AS FLOAT) - CAST(p1960.population AS FLOAT)) / p1960.population) * 100 
-        ELSE NULL
-    END AS population_growth_percentage
+    ((CAST(p2023.population AS FLOAT) - CAST(p1960.population AS FLOAT)) / p1960.population) * 100 AS population_growth_percentage
 FROM 
     countries AS c
 LEFT JOIN 
@@ -24,5 +20,5 @@ SELECT
 FROM 
     pop_growth
 WHERE
-    population_growth_percentage IS NOT NULL AND
+    name <> 'West Bank and Gaza' AND
     population_growth_percentage < 0
