@@ -278,7 +278,7 @@ WHERE
 
 *Bulgaria is considered the world's fastest-shrinking nation*
 
-# Key Findings
+# Insights
 
 1. **High Growth Rates**
    - The majority of the countries on the Top 10 Highest Growth Rate list are from the Middle East and show exceptionally high growth percentages. Qatar and the United Arab Emirates lead with astronomical growth rates exceeding 7000%. This can be attributed to the discovery of oil and gas in these regions, leading to rapid economic development and significant population influxes.
@@ -300,9 +300,3 @@ WHERE
 
 5. **Stable or Minimal Growth**
    - Some countries like Germany (16%), Italy (17%), and Sweden (41%) have relatively stable or minimal growth rates. This is typically due to lower birth rates and higher standards of living that influence demographic changes.
-
-### Insights
-
-- Economic Factors: Rapidly growing economies or countries with high levels of migration often show extreme population growth. This is evident in the high growth rates in the Middle East and certain Caribbean islands.
-- Healthcare and Birth Rates: High growth rates in Africa are largely attributed to improvements in healthcare and high birth rates.
-- Demographic Challenges: Declining growth rates in Eastern Europe and some Western countries highlight issues related to aging populations and emigration.
