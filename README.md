@@ -38,8 +38,8 @@ I downloaded the population/year data from the World Bank Group website and open
 
 I decided to create two tables from the dataset: The first table is called "countries.csv" and contains an "id" column (INT, PRIMARY KEY) and a "name" column (TEXT). The second table is "population_year.csv" and also contains an "id" column (INT, FOREIGN KEY), "population" column (INT), and a "year" column (INT). Once that was completed, the data was prepared for analysis.
 
-![countries](assets\snip_countries_csv.JPG)
-![population_year](assets\population_year_snip.JPG) <br>
+![countries](assets/snip_countries_csv.JPG)
+![population_year](assets/population_year_snip.JPG) <br>
 *This is a snippet of the 218 row countries.csv dataset and the 13,889 row population_year.csv dataset*
 
 For this project, each query was designed to explore a specific question about the population data. Here's the approach I took for each question:
@@ -104,7 +104,7 @@ LIMIT 10;
 | Russian Federation| 143,826,130  |
 | Mexico            | 128,455,567  |
 
-![top10_2023](assets\top102023.png)
+![top10_2023](assets/top102023.png)
 
 *Bar chart to show the staggering difference between India's population and the United States'*
 
