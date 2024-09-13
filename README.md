@@ -170,7 +170,7 @@ WHERE
     population_growth_percentage IS NOT NULL
 ```
 
-| **Country**                      | **growth_perc** |
+| **country**                      | **growth_perc** |
 |----------------------------------|------------------|
 | Qatar                            | 7366             |
 | United Arab Emirates             | 7033             |
@@ -223,7 +223,7 @@ WHERE
 LIMIT 10;
 ```
 
-| **Country**                      | **growth_perc** |
+| **country**                      | **growth_perc** |
 |----------------------------------|------------------|
 | Qatar                            | 7366             |
 | United Arab Emirates             | 7033             |
@@ -270,7 +270,7 @@ WHERE
     population_growth_percentage < 0
 ```
 
-| Country              | Growth_perc |
+| country              | growth_perc |
 |----------------------|-------------|
 | Bosnia and Herzegovina| -2          |
 | Hungary               | -4          |
