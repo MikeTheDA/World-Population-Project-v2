@@ -38,7 +38,7 @@ I downloaded the population/year data from the World Bank Group website and open
 
 I decided to create two tables from the dataset: The first table is called "countries.csv" and contains an "id" column (INT, PRIMARY KEY) and a "name" column (TEXT). The second table is "population_year.csv" and also contains an "id" column (INT, FOREIGN KEY), "population" column (INT), and a "year" column (INT). Once that was completed, the data was prepared for analysis.
 
-![countries](assets/snip_countries_csv.JPG)
+![countries](assets/snip_countries_csv.JPG) &nbsp;
 ![population_year](assets/population_year_snip.JPG) <br>
 *This is a snippet of the 218 row countries.csv dataset and the 13,889 row population_year.csv dataset*
 
