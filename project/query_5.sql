@@ -1,13 +1,9 @@
--- Question: Which country had the highest population growth from 1960 to 2023?
+-- Question: What are the Top 10 Countries with the Highest Population Growth between 1960 and 2023?
 
 WITH pop_growth AS (
 SELECT 
     c.name,
-    CASE
-        WHEN p1960.population <> '0'
-        THEN ((CAST(p2023.population AS FLOAT) - CAST(p1960.population AS FLOAT)) / p1960.population) * 100 
-        ELSE NULL
-    END AS population_growth_percentage
+    ((CAST(p2023.population AS FLOAT) - CAST(p1960.population AS FLOAT)) / p1960.population) * 100 AS population_growth_percentage
 FROM 
     countries AS c
 LEFT JOIN 
@@ -24,5 +20,5 @@ SELECT
 FROM 
     pop_growth
 WHERE
-    population_growth_percentage IS NOT NULL
-LIMIT 1;
+    name <> 'West Bank and Gaza'
+LIMIT 10;

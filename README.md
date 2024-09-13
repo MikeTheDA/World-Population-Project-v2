@@ -20,7 +20,7 @@ As an aspiring data analyst, I wanted to create a project to further develop my 
 2. What were the Top 10 Most Populous Countries in 2023?
 3. Which countries had the highest population in 1960 as well as 2023?
 4. What was the population growth percentage from 1960 to 2023 for each country?
-5. Which country had the highest population growth from 1960 to 2023?
+5. What are the Top 10 Countries with the Highest Population Growth between 1960 and 2023?
 6. Are there any countries that have seen a decline in population since 1960?
 
 # Tools I Used
@@ -148,7 +148,7 @@ INTERSECT
 
 This particular query was a bit complicated for a couple of reasons.
 
-1. 'West Bank and Gaza' has no population data until 1990 (the cells before then contain a '0'). I could've removed that data from the tables before analysis but thought I'd give myself more a challenge with this query 😉 It also meant that I had to filter for "population_growth_percentage IS NOT NULL" so West Bank and Gaza didn't appear in the results table.
+1. 'West Bank and Gaza' has no population data until 1990 (the cells before then contain a '0'). I could've removed that data from the tables before analysis, or even used a certain where clause in this query, but thought I'd give myself more a challenge with this query 😉 It also meant that I had to filter for "population_growth_percentage IS NOT NULL" so West Bank and Gaza didn't appear in the results table.
 2. In order to calculate the population growth percentage correctly, I had to cast the populations as float instead of integer.
 
 ```sql
@@ -179,32 +179,39 @@ WHERE
     population_growth_percentage IS NOT NULL
 ```
 
-| Country                   | Growth_perc |
-|----------------------------|-------------|
-| Qatar                      | 7366        |
-| United Arab Emirates        | 7033        |
-| Sint Maarten (Dutch part)   | 1456        |
-| Kuwait                     | 1311        |
-| Jordan                     | 1237        |
-| Djibouti                   | 1222        |
-| Bahrain                    | 824         |
-| Saudi Arabia               | 787         |
-| Oman                       | 766         |
-| Andorra                    | 748         |
+| **Country**                      | **growth_perc** |
+|----------------------------------|------------------|
+| Qatar                            | 7366             |
+| United Arab Emirates             | 7033             |
+| Sint Maarten (Dutch part)        | 1456             |
+| Kuwait                           | 1311             |
+| Jordan                           | 1237             |
+| Djibouti                         | 1222             |
+| Bahrain                          | 824              |
+| Saudi Arabia                     | 787              |
+| Oman                             | 766              |
+| Andorra                          | 748              |
+| Turks and Caicos Islands         | 722              |
+| Cayman Islands                   | 718              |
+| Cote d'Ivoire                    | 679              |
+| Niger                            | 678              |
+| St. Martin (French part)         | 676              |
+| Kenya                            | 611              |
+| Gambia, The                      | 594              |
+| Angola                           | 585              |
+| Tanzania                         | 572              |
+| Congo, Dem. Rep.                 | 569              |
+| Zambia                           | 559              |
 
 *This is only a snippet of the results*
 
-### 5. Country with the Most Population Growth from 1960 to 2023
+### 5. Top 10 Countries with Highest Population Growth between 1960 and 2023
 
 ```sql
 WITH pop_growth AS (
 SELECT 
     c.name,
-    CASE
-        WHEN p1960.population <> '0'
-        THEN ((CAST(p2023.population AS FLOAT) - CAST(p1960.population AS FLOAT)) / p1960.population) * 100 
-        ELSE NULL
-    END AS population_growth_percentage
+    ((CAST(p2023.population AS FLOAT) - CAST(p1960.population AS FLOAT)) / p1960.population) * 100 AS population_growth_percentage
 FROM 
     countries AS c
 LEFT JOIN 
@@ -221,13 +228,25 @@ SELECT
 FROM 
     pop_growth
 WHERE
-    population_growth_percentage IS NOT NULL
-LIMIT 1;
+    name <> 'West Bank and Gaza'
+LIMIT 10;
 ```
 
-| Country | Growth_perc |
-|---------|-------------|
-| Qatar   | 7366        |
+| **Country**                      | **growth_perc** |
+|----------------------------------|------------------|
+| Qatar                            | 7366             |
+| United Arab Emirates             | 7033             |
+| Sint Maarten (Dutch part)        | 1456             |
+| Kuwait                           | 1311             |
+| Jordan                           | 1237             |
+| Djibouti                         | 1222             |
+| Bahrain                          | 824              |
+| Saudi Arabia                     | 787              |
+| Oman                             | 766              |
+| Andorra                          | 748              |
+
+![top10](assets/top_10_map.png)
+*Map showing that 8 out of the 10 countries w/ the highest population growth are in the Middle East (Asia)*
 
 ### 6. Countries with a Decline in Population Between 1960 and 2023
 
@@ -275,8 +294,9 @@ WHERE
 # Key Findings
 
 1. **High Growth Rates**
-   - Qatar and United Arab Emirates exhibit extremely high growth rates of 7366% and 7033%, respectively. This reflects rapid population increases in these countries, likely driven by substantial economic development and migration.
-   - Other countries with notable growth rates include Sint Maarten (Dutch part) (1456%) and Kuwait (1311%), indicating similar patterns of economic prosperity and migration.
+   - The majority of the countries on the Top 10 Highest Growth Rate list are from the Middle East and show exceptionally high growth percentages. Qatar and the United Arab Emirates lead with astronomical growth rates exceeding 7000%. This can be attributed to the discovery of oil and gas in these regions, leading to rapid economic development and significant population influxes.
+
+   - The economic boom in these countries has attracted many expatriates, driving up population growth. In addition, the rapid urbanization and development of infrastructure have played significant roles in this growth.
 
 2. **Significant Growth in Africa and the Middle East**
    - Many African countries show high growth rates, such as Niger (678%), Kenya (611%), and Angola (585%). This suggests significant population growth due to high birth rates and improving healthcare.
